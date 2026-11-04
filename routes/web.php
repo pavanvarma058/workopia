@@ -1,6 +1,5 @@
 <?php
 
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Response;
 
@@ -9,30 +8,41 @@ Route::get('/', function () {
 });
 
 Route::get('/jobs', function(){
-    return 'Available Jobs';
+    $title = 'Available Jobs';
+    $jobs = [
+        'Web Developer',
+        'Database Admin',
+        'Software Engineer',
+        'Systems Analyst'
+    ];
+    return view('jobs.index', compact('title', 'jobs'));
 })->name('jobs');
 
-Route::get('/test', function() {
-    return response("Hello World", 200);
-});
+Route::get('/jobs/create', function(){
+    return view('jobs.create');
+})->name('jobs.create');
 
-Route::get('/not-found', function() {
-    return new Response("Hello World", 404);
-});
+// Route::get('/test', function() {
+//     return response("Hello World", 200);
+// });
 
-Route::get('/test1', function() {
-    return response()->json(["name" => "Yeswanth"])->cookie('name', 'Yeswanth');
-});
+// Route::get('/not-found', function() {
+//     return new Response("Hello World", 404);
+// });
 
-Route::get('/download', function() {
-    // download the file from the public folder
-    return response()->download(public_path('favicon.ico'));
-});
+// Route::get('/test1', function() {
+//     return response()->json(["name" => "Yeswanth"])->cookie('name', 'Yeswanth');
+// });
 
-Route::get('/read-cookie', function(Request $request) {
-    $cookieValue = $request->cookie('name');
-    return response()->json(['cookie' => $cookieValue]);
-});
+// Route::get('/download', function() {
+//     // download the file from the public folder
+//     return response()->download(public_path('favicon.ico'));
+// });
+
+// Route::get('/read-cookie', function(Request $request) {
+//     $cookieValue = $request->cookie('name');
+//     return response()->json(['cookie' => $cookieValue]);
+// });
 
 // Route::get('/test', function(Request $request){
 //     return [
