@@ -7,9 +7,11 @@ use App\Http\Controllers\HomeController;
 
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
-Route::get('/jobs', [JobController::class, 'index'])->name('jobs');
-Route::get('/jobs/create', [JobController::class, 'create'])->name('jobs.create');
-
+Route::resource('jobs', JobController::class); // This will create all the routes for the JobController
+// Route::get('/jobs', [JobController::class, 'index'])->name('jobs');
+// Route::get('/jobs/create', [JobController::class, 'create'])->name('jobs.create');
+// Route::get('/jobs/{id}', [JobController::class, 'show'])->name('jobs.show');
+// Route::post('/jobs', [JobController::class, 'store'])->name('jobs.store');
 // Route::get('/test', function() {
 //     return response("Hello World", 200);
 // });
