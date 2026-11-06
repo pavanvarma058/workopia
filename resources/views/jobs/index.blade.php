@@ -1,11 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Job Listings</title>
-</head>
-<body>
+@extends('layout')
+
+@section('content')
     <h1>{{ $title }}</h1>
     {{-- @if (!empty($jobs)) 
         <ul>
@@ -14,9 +9,9 @@
             @endforeach
             
             <?php
-                foreach ($jobs as $job) {
-                    echo "<li>" . htmlspecialchars($job, ENT_QUOTES, 'UTF-8') . "</li>";
-                    }
+            foreach ($jobs as $job) {
+                echo '<li>' . htmlspecialchars($job, ENT_QUOTES, 'UTF-8') . '</li>';
+            }
             ?>
         </ul>
     @else
@@ -29,5 +24,4 @@
             <li>No jobs available.</li>
         @endforelse
     </ul>
-</body>
-</html>
+@endsection
