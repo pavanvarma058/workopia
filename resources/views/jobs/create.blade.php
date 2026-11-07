@@ -1,4 +1,7 @@
 @extends('layout')
+@section('title')
+    Create New Job
+@endsection
 @section('content')
     <h1>Create New Job</h1>
     <form action="/jobs" method="POST">
