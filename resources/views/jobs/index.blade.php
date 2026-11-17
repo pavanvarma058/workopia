@@ -1,9 +1,5 @@
-@extends('layout')
-
-@section('title')
-    Workopia | Find and List jobs
-@endsection
-@section('content')
+<x-layout>
+    <x-slot name="title">Available Jobs</x-slot>
     <h1>Available Jobs</h1>
     {{-- @if (!empty($jobs)) 
         <ul>
@@ -27,4 +23,4 @@
             <li>No jobs available.</li>
         @endforelse
     </ul>
-@endsection
+</x-layout>
