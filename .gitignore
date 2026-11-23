@@ -67,4 +67,4 @@ pnpm-debug.log*
 # Editor backups and temporary files
 *.swp
 *.swo
-*~
+*~_theme_files/
